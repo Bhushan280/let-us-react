@@ -2,7 +2,7 @@
 
 ## 1. NPM  
 - **What it is**  
-  NPM (Node Package Manager) is the default package manager for Node.js. It consists of:
+  NPM (Package Manager but dose not stand for - Node Package Manager (NPM dose not have any particular fullform)) is the default package manager for Node.js. It consists of:
   - **Registry**: An online public registry of JavaScript packages, modules, and tools that you can install.  
   - **CLI**: A command‑line interface (`npm`) for installing, updating, removing, and publishing packages.  
 - **Key roles**  
@@ -17,7 +17,7 @@
 - **Zero‑configuration**  
   Start with no config file; Parcel infers entry point(s) and applies transforms.  
 - **Automatic asset transforms**  
-  Out‑of‑the‑box support for JavaScript (ESNext via Babel), TypeScript, CSS, SASS/LESS, images, fonts, JSON, HTML, and more.  
+  Out‑of‑the‑box support for JavaScript (ESNext via `Babel`), TypeScript, CSS, SASS/LESS, images, fonts, JSON, HTML, and more.  
 - **Fast incremental rebuilds**  
   Uses a persistent cache (`.parcel-cache`) to only recompile changed files.
 
