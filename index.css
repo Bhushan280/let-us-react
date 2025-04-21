@@ -14,7 +14,7 @@
 
 .nav-items > ul{
     display: flex;
-    list-style-type: none;
+    list-style-type: none; 
     font-size: 24px;
 
 }
@@ -43,4 +43,9 @@
 .res-logo{
     width: 100%;
     height: 130px;
+}
+
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
 }
