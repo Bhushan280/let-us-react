@@ -1,45 +1,73 @@
 import React from "react";
 import ReactDOM from "react-dom/client"; 
-
+/**
+ * Rough Idea how to build an web applicaiton
+ * Header 
+ * - logo 
+ * - nav items
+ * 
+ * Body
+ * -Search
+ * - Restaureant list
+ *  - ResaurantCard
+ *    -> img, name of res, start rating, couisins , delivery time etc.
+ * Footer
+ *  - Copuright
+ *  - Links
+ *  - Address
+ *  - Contsnt 
+*/
 //React Element
-const heading = (
-    <h1 id="heading" className="head">
-        Namastxce React Using JSX
-    </h1>
-);
-console.log(heading);
+const Header = () => {
+    return (
+        <div className="header">
+            <div>
+                <img
+                    className="logioi"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdaMYtVi9_tfNcpsbGGseU6ehYgV9UeU3h7A&s"
+                    alt=""
+                />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
 
-const ele = <span>This is span</span>
+        </div>
+    );
+};
+const RestaurentCard = () => {
+    return (
+        <div className="res-card">
+            <h3>Meghana Food</h3>
+        </div>
+    )
+}
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="res-container">
+                <RestaurentCard/>
+            </div>
+        </div>
+    )
+};
 
-const data = 1000;
-const Title = () => (
-    <div>
-        <h2 className="head" tabIndex="4">
-            { ele}
-            React using JSX
-            {data}
-        </h2>
-        {heading}
-    </div>
-);
+//Root Level Cmoponent
+const AppLayout = () => {
+    return <div className="app">
+        <Header />
+        <Body/>
 
-//React Funcitonal Component 
-const HeadingComponent = () => (
-    <div id="Container">
-        <Title />
-        {Title()}
-        <Title></Title>
-        {/* can write any js code inside {} yohooo  */}
-        {/* // component inside component -> component composition -> compisite component into one another */}
-        <HeadingShortHand/>
-        <h1> Hello React Functional Component </h1>
-    </div>
-)
-
-//shorthand
-const HeadingShortHand = () => <h1 className="Headinging "> Hello shorthand</h1>
-
-
+    </div>;
+}
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<HeadingComponent/>);
+root.render(<AppLayout/>);
+
+
