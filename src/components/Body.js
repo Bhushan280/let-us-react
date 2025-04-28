@@ -20,7 +20,8 @@ const Body = () => {
 
       const restaurants =
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || [];
+          ?.restaurants || []; // data destructuring
+      // console.log(restaurants);
       setListOfRestaurent(restaurants);
       setAllRestaurants(restaurants);
     } catch (error) {
@@ -52,10 +53,6 @@ const Body = () => {
     <div className='body'>
       <div className='filter'>
         <div className='search'>
-          {/* Controlled Search Input:
-              - value tied to searchText state
-              - onChange updates searchText state
-              - onKeyPress handles Enter key submission */}
           <input
             type='text'
             className='search-box'

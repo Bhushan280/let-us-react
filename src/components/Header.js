@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LOGO_URL } from '../utils/constants';
 
 const Header = () => {
   // let buttonName = 'Login';
   // will not update UI although it will update the variable name
   const [btnName, setBtnName] = useState('Login');
+
+  //If no dependency array array => useEffect is called  on every render of the component ::::::
+  // [] --> dependency array
+  //If dependency is empty then = [] => useEffect will be called on the initial render only :::::::
+  //If dependency array is [btnName] ==> then, called everytime btnName is updated ::::::
+  useEffect(() => {
+    console.log('UseEffect Called');
+  }, [btnName]);
 
   return (
     <div className='header'>
