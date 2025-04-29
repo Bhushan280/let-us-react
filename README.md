@@ -60,3 +60,8 @@ import { Component } frim "path";
 - {Normal JS Utility Function}
 - useState() // mostly used::::::::: use to create state variables ;;;;;
 - useEffect()
+
+# Routing in WEB Apps
+
+- Clint Side Routing
+- Server Side Routing
