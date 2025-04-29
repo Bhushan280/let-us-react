@@ -17,7 +17,7 @@ const RestaurentMenu = () => {
     const data = await fetch(MENU_API_URL + resId);
     const json = await data.json();
     setresInfo(json.data);
-    console.log(json);
+    // console.log(json);
   };
   if (resInfo === null) return <Shimmer />;
 
@@ -26,7 +26,7 @@ const RestaurentMenu = () => {
   const itemCards =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards;
-  console.log(itemCards);
+  //   console.log(itemCards);
   //   if (resInfo === null) return <Shimmer />;
   return (
     <div className='menu'>
