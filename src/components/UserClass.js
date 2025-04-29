@@ -8,11 +8,11 @@ class UserClass extends React.Component {
       count: 0,
     };
 
-    console.log('child Contuctor is called');
+    console.log(this.props.name + 'child Contuctor is called');
   }
 
   componentDidMount() {
-    console.log('child class Compomenet did Mount called');
+    console.log(this.props.name + 'child class Compomenet did Mount called');
   }
 
   render() {
@@ -21,7 +21,7 @@ class UserClass extends React.Component {
     const { name, location } = this.props;
     const { count } = this.state;
 
-    console.log('child render menthod is called ');
+    console.log(this.props.name + 'child render menthod is called ');
     return (
       <div className='user-card'>
         <h1>Count = {count}</h1>

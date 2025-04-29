@@ -5,9 +5,13 @@ import UserClass from './UserClass';
 class About extends React.Component {
   constructor(props) {
     super(props);
+    console.log('parent contructor ');
   }
-
+  componentDidMount() {
+    console.log('parent did mount ');
+  }
   render() {
+    console.log('parent render');
     return (
       <div>
         <h1> About Class Component </h1>
@@ -16,6 +20,7 @@ class About extends React.Component {
         {/* <User name={'Bhushan Chouhan'} /> */}
 
         <UserClass name={'Kashi Chouhan'} location={'Indore'} />
+        <UserClass name={'Chintu Chouhan'} location={'Churu'} />
       </div>
     );
   }
@@ -33,4 +38,27 @@ class About extends React.Component {
 //     </div>
 //   );
 // };
+
+
+
+/*
+
+- Parent Constructor
+- Parent Render
+  
+  - First Child Constructor 
+  - First Child Render
+
+  - Second Child Constructor 
+  - Second Child Render
+
+  <DOM UPDATED - IN SINGLE BATCH> (react batching happens here::::)
+
+  - First Child ComponentDidMount
+  - Second Child ComponentDidMount
+
+- Parent ComponentDidMount
+*/
+
+
 export default About;
