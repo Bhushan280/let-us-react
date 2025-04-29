@@ -10,14 +10,14 @@ class UserClass extends React.Component {
       },
     };
 
-    console.log(this.props.name + ' child Contuctor is called');
+    //console.log(this.props.name + ' child Contuctor is called');
   }
 
   async componentDidMount() {
     this.timer = setInterval(() => {
       console.log('React OP');
     }, 1000);
-    console.log(this.props.name + ' child class Compomenet did Mount called');
+    //console.log(this.props.name + ' child class Compomenet did Mount called');
 
     const data = await fetch('https://api.github.com/users/Bhushan280');
     const json = await data.json();
@@ -31,16 +31,16 @@ class UserClass extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('Component Did Update');
+    //console.log('Component Did Update');
   }
 
   componentWillUnmount() {
     clearInterval(this.timer);
-    console.log('Component Will Unmount');
+    //console.log('Component Will Unmount');
   }
   render() {
     //converted into HTML and rendered into the webpage UI
-    console.log('Render');
+    //console.log('Render');
     const { name, location, avatar_url } = this.state.userInfo;
 
     return (
