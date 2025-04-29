@@ -109,3 +109,7 @@
   );
 }
 /* Shimmer UI CSS END */
+
+.user-card {
+  border: 2px solid black;
+}
