@@ -5,13 +5,13 @@ import UserClass from './UserClass';
 class About extends React.Component {
   constructor(props) {
     super(props);
-    console.log('parent contructor ');
+    // console.log('parent contructor ');
   }
   componentDidMount() {
-    console.log('parent did mount ');
+    // console.log('parent did mount ');
   }
   render() {
-    console.log('parent render');
+    // console.log('parent render');
     return (
       <div>
         <h1> About Class Component </h1>
@@ -20,7 +20,6 @@ class About extends React.Component {
         {/* <User name={'Bhushan Chouhan'} /> */}
 
         <UserClass name={'Kashi Chouhan'} location={'Indore'} />
-        <UserClass name={'Chintu Chouhan'} location={'Churu'} />
       </div>
     );
   }
@@ -38,8 +37,6 @@ class About extends React.Component {
 //     </div>
 //   );
 // };
-
-
 
 /*
 
@@ -59,6 +56,5 @@ class About extends React.Component {
 
 - Parent ComponentDidMount
 */
-
 
 export default About;

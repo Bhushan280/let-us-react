@@ -5,6 +5,12 @@ const User = ({ name }) => {
   const [count2, setCount2] = useState(1);
 
   useEffect(() => {}, []);
+
+  // async function getUserInfo() {
+  //   const data = await fetch('https://api.github.com/users/Bhushan280');
+  //   const json = data.json();
+  //   console.log(json);
+  // }
   return (
     <div className='user-card'>
       <h1>Count = {count}</h1>
@@ -14,6 +20,6 @@ const User = ({ name }) => {
       <h2>Contact : Bhushan280</h2>
     </div>
   );
-};
+};   
 
 export default User;

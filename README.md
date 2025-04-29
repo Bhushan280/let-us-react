@@ -65,3 +65,9 @@ import { Component } frim "path";
 
 - Clint Side Routing
 - Server Side Routing
+
+
+
+# React Life Cycle 
+![alt text](image.png)
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/

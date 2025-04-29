@@ -4,40 +4,40 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // creating a state varibale in class based component
-      count: 0,
+      userInfo: {
+        name: 'kashi',
+        location: 'Maheshwar',
+      },
     };
 
     console.log(this.props.name + 'child Contuctor is called');
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     console.log(this.props.name + 'child class Compomenet did Mount called');
+
+    const data = await fetch('https://api.github.com/users/Bhushan280');
+    const json = await data.json();
+    console.log(json);
+
+    this.setState({
+      userInfo: json,
+    });
+
+    console.log(json);
   }
 
+  componentDidUpdate() {
+    console.log('Component Did Update');
+  }
   render() {
-    // converted into HTML and rendered into the webpage UI
+    //converted into HTML and rendered into the webpage UI
+    console.log('Render');
+    const { name, location, avatar_url } = this.state.userInfo;
 
-    const { name, location } = this.props;
-    const { count } = this.state;
-
-    console.log(this.props.name + 'child render menthod is called ');
     return (
       <div className='user-card'>
-        <h1>Count = {count}</h1>
-        <button
-          onClick={() => {
-            /* never ever update state variable directly in class based component {this.state.count = this.state.count+1 ❌} it can create inconsistancy in your program
-             */
-
-            this.setState({
-              // this is the big object in class based component
-              count: this.state.count + 1,
-            }); // this will contains the updated value of your state variable, can be used any where inside the component {when ever thisState will updateds react will re-render your component }
-          }}
-        >
-          CountIncrease
-        </button>
+        <img src={avatar_url} alt='' />
         <h2>Name : {name} </h2>
         <h2>Location : {location}</h2>
         <h2>Contact : Bhushan280</h2>
@@ -47,3 +47,32 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
+
+/*****
+ *
+ * Contructor Called (with dummy data assigned while instantiating)
+ * Render will be called (with dummy data)
+ *
+ * <Html will be loaded into DOM with the dummt data fro few mili seconds>
+ *
+ * ComponentDidMount() is called ====> we will make an API call is called
+ *
+ * then will do
+ * this.setState // ::: ===> State Variable is Updated
+ *
+ * :::::: this finished the Mountying Cycle ::::::::::
+ *
+ * ------>
+ * Uopdate Cycle Begins {UPDATE}
+ *
+ *  render() // render method will be called again with the API data:: new Data
+ *
+ * Now
+ * HTML is Loaded with New API DATA
+ *
+ * then --->
+ *
+ * Called ComponentDidUpdate::::::::::;;;
+ *
+ *
+ */
