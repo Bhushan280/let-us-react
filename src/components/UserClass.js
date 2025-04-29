@@ -10,11 +10,14 @@ class UserClass extends React.Component {
       },
     };
 
-    console.log(this.props.name + 'child Contuctor is called');
+    console.log(this.props.name + ' child Contuctor is called');
   }
 
   async componentDidMount() {
-    console.log(this.props.name + 'child class Compomenet did Mount called');
+    this.timer = setInterval(() => {
+      console.log('React OP');
+    }, 1000);
+    console.log(this.props.name + ' child class Compomenet did Mount called');
 
     const data = await fetch('https://api.github.com/users/Bhushan280');
     const json = await data.json();
@@ -29,6 +32,11 @@ class UserClass extends React.Component {
 
   componentDidUpdate() {
     console.log('Component Did Update');
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    console.log('Component Will Unmount');
   }
   render() {
     //converted into HTML and rendered into the webpage UI
@@ -72,7 +80,11 @@ export default UserClass;
  *
  * then --->
  *
- * Called ComponentDidUpdate::::::::::;;;
+ * Called ComponentDidUpdate() :::::::::::::
+ *
+ *
+ * and when we move or navigate to another url page or componenet then in this case
+ * ComponenetWillUnMount() will be called ::::::::::
  *
  *
  */
