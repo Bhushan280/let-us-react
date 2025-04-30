@@ -2,6 +2,7 @@ import RestaurantCard from './RestaurantCard';
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurent] = useState([]);
@@ -29,6 +30,14 @@ const Body = () => {
       console.error('Error fetching data:', error);
     }
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline, Please check your Internet Connection.
+      </h1>
+    );
 
   const handleSearch = () => {
     if (searchText === '') {
