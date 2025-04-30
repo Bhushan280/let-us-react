@@ -13,11 +13,10 @@ const User = ({ name }) => {
     };
   }, []);
 
-
   // async function getUserInfo() {
   //   const data = await fetch('https://api.github.com/users/Bhushan280');
   //   const json = data.json();
-  //   console.log(json);
+  //   console.log(json);s
   // }
   return (
     <div className='user-card'>
