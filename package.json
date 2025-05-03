@@ -18,6 +18,8 @@
   "license": "ISC",
   "homepage": "https://github.com/Bhushan280/let-us-react/blob/main/README.md",
   "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "postcss": "^8.5.3",
     "parcel": "^2.14.4"
   },
   "dependencies": {
@@ -25,7 +27,7 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^6.14.2"
   },
-  "browserlist": [
-    "last 2 version"
+  "browserslist": [
+    "last 2 versions"
   ]
 }
