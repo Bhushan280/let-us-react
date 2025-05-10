@@ -1,8 +1,9 @@
 import RestaurantCard from './RestaurantCard';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import UserContext from '../utils/UserContext';
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurent] = useState([]);
@@ -59,6 +60,8 @@ const Body = () => {
     }
   };
 
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
@@ -83,7 +86,14 @@ const Body = () => {
           </button>
         </div>
         <div className='m-4 p-4 flex items-center '>
-          <button
+          <label htmlFor=''>UserName : </label>
+          <input
+            type='text'
+            className='border border-black m-2 p-2'
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          {/* <button
             className='px-4 py-4 bg-gray-100 rounded-lg'
             onClick={() => {
               const filteredList = allRestaurants.filter(
@@ -93,7 +103,7 @@ const Body = () => {
             }}
           >
             Top Rated Restaurants
-          </button>
+          </button> */}
         </div>
       </div>
 

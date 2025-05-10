@@ -4,14 +4,14 @@ const User = ({ name }) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(1);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      console.log('React OP');
-    }, 1000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     console.log('React OP');
+  //   }, 1000);
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // }, []);
 
   // async function getUserInfo() {
   //   const data = await fetch('https://api.github.com/users/Bhushan280');
