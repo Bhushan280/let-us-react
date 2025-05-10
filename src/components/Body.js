@@ -9,6 +9,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState('');
   const [allRestaurants, setAllRestaurants] = useState([]);
 
+  //console.log('Body Rendered', listOfRestaurant);
+
   useEffect(() => {
     fetchData();
   }, []);

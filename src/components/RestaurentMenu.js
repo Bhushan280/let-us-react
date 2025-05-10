@@ -15,27 +15,35 @@ const RestaurentMenu = () => {
   const itemCards =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards;
-  //   console.log(itemCards);
-  //   if (resInfo === null) return <Shimmer />;
+
+  console.log(
+    'Item Cards',
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+  );
+
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c?.card?.card?.['@type'] ===
+        'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+    );
+
+  console.log(categories);
+
   return (
-    <div className='menu'>
-      <h1>{name}</h1>
-      <h3>
+    <div className='text-center '>
+      <h1 className='font-bold m-5 text-2xl'>{name}</h1>
+      <p className='font-bold text-xl'>
         {cuisines.join(', ')} - {costForTwoMessage}
-      </h3>
-      {itemCards?.map((item) => (
+      </p>
+      {/* {itemCards?.map((item) => (
         <div key={item.card.info.id}>
           <h4>
             {item.card.info.name} - Rs. {item.card.info.price / 100}
           </h4>
           <p>{item.card.info.category}</p>
         </div>
-      ))}
-      <ul>
-        <li>Biryani</li>
-        <li>Burger</li>
-        <li>Diet Coke</li>
-      </ul>
+      ))} */}
     </div>
   );
 };
