@@ -18,9 +18,10 @@
   "license": "ISC",
   "homepage": "https://github.com/Bhushan280/let-us-react/blob/main/README.md",
   "devDependencies": {
-    "tailwindcss": "^3.3.3",
+    "buffer": "^6.0.3",
+    "parcel": "^2.14.4",
     "postcss": "^8.5.3",
-    "parcel": "^2.14.4"
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
     "react": "^19.1.0",
