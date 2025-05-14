@@ -67,7 +67,7 @@ const Body = () => {
   ) : (
     <div className='body'>
       <div className='filter flex'>
-        <div className='m-4 p-4'>
+        <div className='m-4 p-4'> 
           <input
             type='text'
             className='border border-solid border-black '

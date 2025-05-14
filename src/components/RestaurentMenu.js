@@ -1,7 +1,7 @@
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
 import useRestaurentMenu from '../utils/useRestaurentMenu';
-import RestaurantCategory from './RestaurantCategory';
+import RestaurantCategory from './RestaurantCategory'
 import { useState } from 'react';
 
 const RestaurentMenu = () => {
