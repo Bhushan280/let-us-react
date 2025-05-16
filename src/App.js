@@ -9,6 +9,8 @@ import Contact from './components/Contact';
 import RestaurentMenu from './components/RestaurentMenu';
 // import Grocery from './components/Grocery';
 import UserContext from './utils/UserContext';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 /***
  * Chunking
  * Code Spliting
@@ -36,12 +38,14 @@ const AppLayout = () => {
     setUserName(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className='app'>
-        <Header />
-        <Outlet /> {/* This renders child routes */}
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className='app'>
+          <Header />
+          <Outlet /> {/* This renders child routes */}
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
