@@ -3,6 +3,26 @@ import ItemList from './ItemList';
 import { clearCart } from '../utils/cartSlice';
 
 const Cart = () => {
+  /**
+   * Efficient Redux Store Subscription Strategy
+   *
+   * When accessing Redux store data, prefer granular slice selection over full store subscription.
+   *
+   * Anti-pattern:
+   * const store = useSelector((store) => store);
+   * const cartItems = store.cart.items;
+   *
+   * Performance Implications:
+   * - Subscribes to entire store updates, regardless of relevance
+   * - Triggers component re-renders for unrelated state changes
+   * - Creates unnecessary DOM reconciliation operations
+   *
+   * Best Practice:
+   * - Select only required state slice directly
+   * - Optimizes component rendering performance
+   * - Reduces unnecessary re-renders by shallow comparing only relevant state
+   * - Aligns with React component update optimization strategies
+   */
   const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
 
