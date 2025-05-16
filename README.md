@@ -71,3 +71,14 @@ import { Component } frim "path";
 # React Life Cycle 
 ![alt text](image.png)
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+
+
+
+# Redux Toolkit 
+ - install @reduxjs/toolkit and react-redux libraries.
+ - Build our store 
+ - Conenct our store to our App
+ - Create cartSlice
+ - Didpatch Action 
+ - Read the data using Selector 
